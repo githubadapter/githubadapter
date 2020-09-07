@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "8682eafe-0acc-4d25-bdd5-041ca0904cc9",
+		"name": "GitHub Adapter end-to-end testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Get user info - 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "274924d1-3405-49c1-af41-cf73fdd18bfc",
+								"exec": [
+									"pm.test(\"Good request\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1.0/users/symfony",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1.0",
+								"users",
+								"symfony"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user info - check result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5703deb6-3a68-445d-87c1-c16af00de4f0",
+								"exec": [
+									"pm.test(\"Check name value\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.name).to.eql(\"Symfony\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1.0/users/symfony",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1.0",
+								"users",
+								"symfony"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user info - 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3105c83-3493-4b40-998c-fd2cb94c6ba1",
+								"exec": [
+									"pm.test(\"Bad params\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1.0/users/-symfony",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1.0",
+								"users",
+								"-symfony"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get repo info - 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "af55357e-3317-48be-83d9-d517d4185694",
+								"exec": [
+									"pm.test(\"Good request\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1.0/repositories/symfony/symfony",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1.0",
+								"repositories",
+								"symfony",
+								"symfony"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get repo info - check result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c72bd024-57bf-4741-9f94-6eae880c3a5c",
+								"exec": [
+									"pm.test(\"Check decription value\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.description).to.eql(\"The Symfony PHP framework\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1.0/repositories/symfony/symfony",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1.0",
+								"repositories",
+								"symfony",
+								"symfony"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get repo info - 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "70889c49-e4ea-41d9-871d-dec2c1d10cb7",
+								"exec": [
+									"pm.test(\"Bad params\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1.0/repositories/symfony/-symfony",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1.0",
+								"repositories",
+								"symfony",
+								"-symfony"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1ce7642a-b2c7-41b8-9f09-06102ae69f88",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd6ae95c-3968-4b43-9a5c-a43f4bce4a13",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7d05e56b-ae9c-4891-87aa-329f2e724d7e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9e5329dc-cdf7-4d56-9e17-06a5f8634dc2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9a5bfae8-7184-46e7-aa58-e112b23d902d",
+			"key": "url",
+			"value": "http://127.0.0.1:8000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
