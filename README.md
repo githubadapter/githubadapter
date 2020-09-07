@@ -1,4 +1,4 @@
-Projekt Git Adapter nadaj możliwość pobierania krótkich informacji z GitHub o użytkwnikach i repoztoriach.
+Projekt Git Adapter nadaj możliwość pobierania krótkich informacji z GitHub o użytkwnikach i repozytoriach.
 
 Przejdź przez kolejne kroki, aby zainstalować aplikacje:
 
@@ -56,5 +56,5 @@ W każdym razie gdy osiągniemy limitu, dostaniemy odpowiedni bład od GitHub i 
 
 7. W projekcie obecnie brakuje unit testów i jasnej dokumentacji.
 
-8. Więcej informacji na temat przygotowania projektu do wdrażania: https://symfony.com/doc/4.4/deployment.html
+8. Więcej informacji na temat przygotowania projektu do wdrażania: https://symfony.com/doc/4.4/deployment.html .
 Chciałbym poświęcić trochę więcej czasu kwestiam, wymienionym w artykule, jednak już mamy terminy.
